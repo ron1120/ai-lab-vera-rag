@@ -25,6 +25,7 @@ failure modes:
 """
 
 import re
+import sys
 
 from vera.agents import _DRAFT_LEAKAGE_PATTERNS, orchestrate
 from vera.golden import load_golden_cases
@@ -191,6 +192,7 @@ def main():
         for r in results:
             if not r["pass"]:
                 print(f"  #{r['id']}: {r['question']}")
+        sys.exit(1)  # non-zero exit so CI actually fails the job
 
 
 if __name__ == "__main__":

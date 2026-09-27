@@ -1,0 +1,41 @@
+name: Vera golden evals
+
+# SYNTHETIC / FOR TRAINING ONLY. Runs the Section W eval suite (16 golden
+# Q&A cases) against Vera's multi-agent pipeline on every push and PR, so
+# a regression (a hallucinated number, a missing citation, forward-looking
+# leakage, a wrong department attribution, or a wrong route) fails CI
+# instead of being caught by hand at demo time — the exact gap the
+# booklet's own "what's next" section calls out.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip and the ChromaDB embedding model
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/chroma
+          key: ${{ runner.os }}-vera-${{ hashFiles('vera/requirements.txt') }}
+
+      - name: Install dependencies
+        run: pip install -r vera/requirements.txt
+
+      - name: Build the vector store
+        run: python -m vera.run_ingest
+
+      - name: Run golden eval suite
+        run: python -m vera.evals
