@@ -6,6 +6,10 @@ A working RAG + multi-agent prototype of **Vera**, the FP&A assistant for the fi
 
 Vera answers budget/actual/variance questions strictly from Meridian's own closed, published documents, always cites her source, and refuses or escalates rather than ever guessing a number.
 
+![Vera CLI chat demo: a cited T&E variance answer, a forward-looking refusal, and an unclosed-period escalation](vera_chat_demo.gif)
+
+*Live terminal session — a cited answer (`$401K actual / $340K budget / +18.0%`), a forward-looking refusal, and an unclosed-period escalation, each with its real citation.*
+
 ## Quickstart
 
 ```bash
