@@ -1,0 +1,8 @@
+doc_id,title,file_path,effective_date,owner,category
+budget_2026,FY2026 Approved Budget,documents/budget_2026.md,2025-12-15,Corporate FP&A,Budget
+variance_report_q3_2026,Q3 2026 Budget vs. Actual Variance Report,documents/variance_report_q3_2026.md,2026-10-05,Corporate Controller,Variance Report
+chart_of_accounts,Corporate Chart of Accounts,documents/chart_of_accounts.md,2026-01-01,Corporate Controller,Reference
+close_calendar_2026,FY2026 Financial Close Calendar,documents/close_calendar_2026.md,2026-01-05,Corporate Controller,Reference
+expense_policy,T&E and G&A Expense Policy,documents/expense_policy.md,2026-01-01,Corporate Controller,Policy
+board_narrative_style_guide,Board Narrative Style Guide — Variance Commentary,documents/board_narrative_style_guide.md,2025-11-01,CFO,Style Guide
+fpna_faq_golden,FP&A Golden Q&A Test Set,faqs/fpna_faq_golden.md,2026-09-23,Corporate FP&A,Test Set
